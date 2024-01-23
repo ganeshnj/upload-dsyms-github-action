@@ -39,7 +39,8 @@ export const main = async (): Promise<void> => {
       colorDepth: 1,
     }
 
-    const dry_run = core.getBooleanInput('dry_run', {required: false})
+    // https://github.com/actions/toolkit/issues/844
+    // Can't use core.getBooleanInput() because it breaks when input is not set.
     const paths = core.getMultilineInput('dsym_paths', {required: true})
 
     for (const path of paths) {
