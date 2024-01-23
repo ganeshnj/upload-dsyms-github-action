@@ -1,4 +1,4 @@
-name: Upload dSYM Files
+name: Integration Test
 
 on:
   workflow_dispatch:
