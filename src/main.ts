@@ -40,7 +40,7 @@ export const main = async (): Promise<void> => {
     }
 
     const paths = core.getMultilineInput('dsym_paths', {required: true})
-    const dry_run = core.getBooleanInput('dry_run', {required: false}) || false
+    const dry_run = core.getInput('dry_run', {required: false}).toLowerCase() === 'true'
 
     for (const path of paths) {
       await upload(path, dry_run, context)
