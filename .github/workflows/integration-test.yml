@@ -19,5 +19,6 @@ jobs:
         with:
           api_key: ${{ secrets.DATADOG_API_KEY }}
           site: datadoghq.com
+          dry_run: false
           dsym_paths: |
             src/__tests__/fixtures/test.zip
